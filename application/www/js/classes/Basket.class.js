@@ -14,7 +14,7 @@ class Basket {
    		}
   	}
 
-	addToBasket(beerId, name, quantity) {
+	addToBasket(beerId, name, quantity, price) {
 		
 		beerId    = parseInt(beerId);
     	quantity  = parseInt(quantity);
@@ -23,7 +23,8 @@ class Basket {
 		let item = {
 			beerId: beerId,
 			name: name,
-			quantity: quantity
+			quantity: quantity,
+			price: price
 		}
 
 		for(let index = 0; index < this.items.length; index++)
@@ -61,7 +62,14 @@ class Basket {
 	}
 
 	displayCompleteBasket() {
-		
+
+		$('#displayBasket table tbody').empty();
+		for (let i = 0; i < this.items.length; i++) {
+			var tr = $('<tr>');
+			tr.append('<td>'+this.items[i].quantity+'</td><td>'+this.items[i].name+'</td><td>'+this.items[i].price+'</td><td>'+(parseFloat(this.items[i].quantity)*parseFloat(this.items[i].price)) +'</td><td><button>Supprimer</button></td>')
+			$('#displayBasket table tbody').append(tr);
+		}
+
 	}
 
 
