@@ -1,0 +1,11 @@
+<a href="<?= $requestUrl ?>/products">Retour aux produits</a>
+<div>
+ 	<img src="<?= $wwwUrl?>/images/beers/<?=$beer['Photo']?>">
+    <h3><?=$beer['Name']?></h3>
+    <p><?=$beer['Description']?></p>
+    <form>
+        <input type="text" name="quantity" id="beer-<?=$beer['Id']?>">
+        <button class="addToBasket" data-name="<?=$beer['Name']?>" data-id="<?=$beer['Id']?>">Ajouter au panier</p>
+    </form>
+
+</div>

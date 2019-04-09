@@ -1,0 +1,25 @@
+'use strict';
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// FONCTIONS                                                                           //
+/////////////////////////////////////////////////////////////////////////////////////////
+var basket = new Basket();
+
+$('.addToBasket').on('click', function(event) {
+	event.preventDefault();
+	var id = $(this).data('id');
+	var name = $(this).data('name');
+	var quantity = $('#beer-'+id).val();
+
+	console.log(id);
+	console.log(name);
+	console.log(quantity);
+	basket.addToBasket(id, name, quantity);
+});
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// CODE PRINCIPAL                                                                      //
+/////////////////////////////////////////////////////////////////////////////////////////
+

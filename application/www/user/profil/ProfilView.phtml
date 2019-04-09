@@ -1,0 +1,13 @@
+<div>
+	<?php if(empty($user) == false) { ?>
+	<form action="<?=$requestUrl?>/user/profil" method="POST">
+		<input type="text" name="firstname" placeholder="Prénom" value="<?=$user['firstName']?>">
+		<input type="text" name="lastname" placeholder="Nom" value="<?=$user['lastName']?>">
+		<input type="text" name="email" placeholder="email" value="<?=$user['email']?>">
+		<input type="text" name="address" placeholder="Adresse" value="<?=$user['address']?>">
+		<input type="text" name="city" placeholder="Ville" value="<?=$user['city']?>">
+		<input type="text" name="zip" placeholder="Code postal" value="<?=$user['zip']?>">
+		<input type="submit" value="Modifier">
+	</form>
+	<?php } ?>
+</div>

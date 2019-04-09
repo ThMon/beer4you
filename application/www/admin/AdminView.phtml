@@ -1,0 +1,62 @@
+<div>	
+	<hr/>
+	<a href="<?=$requestUrl ?>/admin/product/add">Ajouter une nouvelle bière</a>
+	<table>
+		<tr>	
+			<td>Nom</td>
+			<td>photo</td>
+			<td>Action</td>
+		</tr>
+
+		<?php foreach($beers as $beer) {?>
+
+			<tr>	
+				<td><?= $beer['Name'] ?></td>
+				<td><img src="<?= $wwwUrl ?>/images/beers/<?=$beer['Photo']?>"></td>
+				<td>
+					<a href="<?=$requestUrl ?>/admin/product/update?id=<?=$beer['Id']?>">Modifier</a>
+					<a href="<?=$requestUrl ?>/admin/product/delete?id=<?=$beer['Id']?>">Supprimer</a>
+				</td>
+			</tr>
+
+		<?php } ?>
+
+		</table>
+		<hr/>
+		<table>
+
+			<tr>	
+				<td>Nom</td>
+				<td>Prénom</td>
+				<td>Email</td>
+				<td>Role</td>
+				<td>Action</td>
+			</tr>
+
+			<?php foreach($users as $user) {?>
+				<?php if($user['email'] != $_SESSION['user']['email']) { ?>
+				<tr>	
+					<td><?=$user['lastName']?></td>
+					<td><?=$user['firstName']?></td>
+					<td><?=$user['email']?></td>
+					<td>
+						<select class="userRole" data-id="<?=$user['Id']?>">
+						<?php if($user['role'] == 'user') {?>
+							<option value="user" selected="">user</option>
+							<option value="admin">admin</option>
+						<?php } else {?>
+							<option value="admin" selected>admin</option>
+							<option value="user">user</option>
+						<?php } ?>
+						</select>
+					</td>
+					<td>
+						<a href="<?=$requestUrl ?>/admin/user/delete?id=<?=$user['Id']?>">Supprimer</a>
+					</td>
+				</tr>
+				<?php } ?>
+			<?php } ?>
+
+		</table>
+</div>
+<script type="text/javascript" src="<?= $wwwUrl ?>/js/admin.js"></script>

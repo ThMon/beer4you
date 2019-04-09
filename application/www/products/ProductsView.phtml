@@ -1,0 +1,17 @@
+<ul>
+    <?php foreach($beers as $beer) {?>
+        <li>
+            <a href="<?= $requestUrl ?>/products/detail?productId=<?=$beer['Id']?>">
+                <div>
+                    <h3><?=$beer['Name']?></h3>
+                    <img src="<?= $wwwUrl?>/images/beers/<?=$beer['Photo']?>">
+                    <p><?=$beer['Description']?></p>
+                </div>
+            </a>
+            <form>
+            <input type="text" name="quantity" id="beer-<?=$beer['Id']?>">
+            <button class="addToBasket" data-name="<?=$beer['Name']?>" data-id="<?=$beer['Id']?>">Ajouter au panier</p>
+            </form>
+        </li>
+    <?php }?>
+</ul>
