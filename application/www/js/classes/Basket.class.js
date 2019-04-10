@@ -8,8 +8,10 @@ class Basket {
 
   	displayItemsBasket() {
   		if(this.items.length > 0) {
+  			$('#itemBasket').removeClass('hide');
    			$('#itemBasket').text(this.items.length);
    		} else {
+   			$('#itemBasket').addClass('hide');
    			$('#itemBasket').text('');
    		}
   	}
@@ -58,7 +60,11 @@ class Basket {
 	saveBasket() {
 
 		saveDataToDomStorage('basketBeer4you', this.items);	
-		this.displayItemsBasket();	
+		this.displayItemsBasket();
+
+		if(window.location.href.indexOf('/basket') != -1) {
+			this.displayCompleteBasket();
+		}
 	}
 
 	displayCompleteBasket() {
@@ -66,10 +72,15 @@ class Basket {
 		$('#displayBasket table tbody').empty();
 		for (let i = 0; i < this.items.length; i++) {
 			var tr = $('<tr>');
-			tr.append('<td>'+this.items[i].quantity+'</td><td>'+this.items[i].name+'</td><td>'+this.items[i].price+'</td><td>'+(parseFloat(this.items[i].quantity)*parseFloat(this.items[i].price)) +'</td><td><button>Supprimer</button></td>')
+			tr.append('<td>'+this.items[i].quantity+'</td><td>'+this.items[i].name+'</td><td>'+this.items[i].price+'</td><td>'+(parseFloat(this.items[i].quantity)*parseFloat(this.items[i].price)) +'</td><td><button class="trash-beer" data-index="'+i+'">Supprimer</button></td>')
 			$('#displayBasket table tbody').append(tr);
 		}
+		$('#basketItem').val(JSON.stringify(this.items));
+	}
 
+	removeToBasket(id) {
+		this.items.splice(id, 1);
+		this.saveBasket();
 	}
 
 

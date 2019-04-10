@@ -4,7 +4,15 @@
 // FONCTIONS                                                                           //
 /////////////////////////////////////////////////////////////////////////////////////////
 let basket = new Basket();
+/*
+$('#userButton').on('mouseover', function() {
+	$('.under-nav-list').removeClass('hide');
+});
 
+$('.under-nav-list').on('mouseout', function() {
+	$('.under-nav-list').addClass('hide');
+});
+*/
 if(window.location.href.indexOf('/product') != -1) {
 
 	$('.addToBasket').on('click', function(event) {
@@ -26,6 +34,11 @@ if(window.location.href.indexOf('/basket') != -1) {
 	console.log('panier');
 	basket.displayCompleteBasket();
 
+	$(document).on('click', '.trash-beer', function(event) {
+		event.preventDefault();
+		let id = $(this).data('index');
+		basket.removeToBasket(id);
+	});
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////

@@ -5,57 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Beer4you</title>
     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/normalize-3.0.3.min.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/all.min.css">
     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/font-awesome-4.3.0.min.css">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- Feuilles de styles de l'application -->
-    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/3wa-resto.css">
-    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-button.css">
-    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-form.css">
-    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-table.css">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps|Karla">
-
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/style.css">
+  
     <!-- Librairie jQuery -->
     <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 
     <!-- JavaScript de l'application -->
     <script src="<?= $wwwUrl ?>/js/utilities.js"></script>
     <script src="<?= $wwwUrl ?>/js/classes/Basket.class.js"></script>
-
+    <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline|Indie+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
 </head>
 <body>
 
 <!-- En-tête commune -->
+<nav class="nav-bar">
+    <div class="nav-list1">
+        <a class="" href="<?= $requestUrl ?>">Accueil</a>
+        <a class="" href="<?= $requestUrl ?>/products">Nos produits</a>
+    </div>
+    <div class="nav-list2">
+    
+    <a href="#" id="userButton"><i class="fas fa-user"></i></a>
+        <div class="under-nav-list">
+            <?php if(array_key_exists('user', $_SESSION)) {?>
+                <a class="" href="<?= $requestUrl ?>/user/profil">Mon profil</a>
+                <?php if($_SESSION['user']['role'] == 'admin') {?>
+                    <a class="" href="<?= $requestUrl ?>/admin">Admin</a>
+                <?php } ?>
+                 <a class="" href="<?= $requestUrl ?>/user/logout">Déconnexion</a>
+            <?php } else {?>
+                <a class="" href="<?= $requestUrl ?>/user/login">Connexion</a>
+                <a class="" href="<?= $requestUrl ?>/user/register">S'enregistrer</a>
+            <?php } ?>
+
+        </div>
+        <a class="nav-icon" href="<?= $requestUrl ?>/basket"><i class="fas fa-shopping-cart"></i></a>
+        <em class="hide" id="itemBasket"></em>
+        
+    </div>
+</nav>
+
 <header>
     <h1>
+        <img class="header-logo" src="<?= $wwwUrl ?>/images/logo/logo-beer.jpg">
         <a href="<?= $requestUrl ?>">
-            <img src="<?= $wwwUrl ?>/images/logo.gif" height="63" width="57" >Beer4you, de la mauvaise bière, mais de la bière quand même
+           Beer4You, de la mauvaise bière, mais de la bière quand même
         </a>
     </h1>
 </header>
-
-<!-- Interface utilisateur -->
-<nav class="user-interface">
-    <?php if(array_key_exists('user', $_SESSION)) {?>
-        <span>Heureux de te revoir <?=$_SESSION['user']['firstname']?></span>
-    <?php }?>
-    <ul class="link-list">
-        <a class="" href="<?= $requestUrl ?>">Accueil</a>
-        <a class="" href="<?= $requestUrl ?>/products">Nos produits</a>
-        <?php if(array_key_exists('user', $_SESSION)) {?>
-            <a class="" href="<?= $requestUrl ?>/user/logout">Déconnexion</a>
-            <a class="" href="<?= $requestUrl ?>/user/profil">Mon profil</a>
-        <?php } else {?>
-            <a class="" href="<?= $requestUrl ?>/user/login">Connexion</a>
-            <a class="" href="<?= $requestUrl ?>/user/register">S'enregistrer</a>
-        <?php } ?>
-        <?php if(array_key_exists('user', $_SESSION) && $_SESSION['user']['role'] == 'admin') {?>
-            <a class="" href="<?= $requestUrl ?>/admin">Admin</a>
-        <?php } ?>
-        <?php if(array_key_exists('user', $_SESSION)) {?>
-            <a class="" href="<?= $requestUrl ?>/basket">Panier <em id="itemBasket"></em></a>
-        <?php } ?>
-    </ul>
-</nav>
 
 <main>
     <!-- Affichage du template lié à la vue -->

@@ -1,0 +1,141 @@
+@font-face {
+ font-family: "Oswald-Bold";
+ src: url("../fonts/Oswald/Oswald-Bold.ttf") format("ttf"),     
+}
+
+@font-face {
+ font-family: "Oswald-ExtraLight";
+ src: url("../fonts/Oswald/Oswald-ExtraLight.ttf") format("ttf"),     
+}
+
+@font-face {
+ font-family: "Oswald-Light";
+ src: url("../fonts/Oswald/Oswald-Light.ttf") format("ttf"),     
+}
+
+@font-face {
+ font-family: "Oswald-Medium";
+ src: url("../fonts/Oswald/Oswald-Medium.ttf") format("ttf"),     
+}
+
+@font-face {
+ font-family: "Oswald-Regular";
+ src: url("../fonts/Oswald/Oswald-Regular.ttf") format("ttf"),     
+}
+
+@font-face {
+ font-family: "Oswald-SemiBold";
+ src: url("../fonts/Oswald/Oswald-SemiBold.ttf") format("ttf"),     
+}
+
+@font-face {
+ font-family: "Fascinate";
+ src: url("../fonts/Fascinate/FascinateInline-Regular.ttf") format("ttf"),     
+}
+
+body {
+	margin: 0;
+	padding:0;
+}
+
+header h1 {
+	text-align: center;
+}
+
+header h1 a {
+	display: block;
+	text-decoration: none;
+	font-size: 36px;
+	color: #FFBD2F;
+	font-family: 'Indie Flower', cursive;
+	margin: auto;
+	margin-top: -40px;
+	width:50%;
+	text-align: center;
+}
+
+.header-logo {
+	width:20%;
+	display: block;
+	margin: auto;
+	margin-top: -15px;
+}
+
+.hide {
+	display: none;
+}
+
+.nav-bar {
+	position: fixed;
+	top : 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 60px;
+	border-bottom: 1px solid grey;
+	background-color: white;
+}
+
+.nav-list1 {
+	position: absolute;
+	left : 10%;
+	top: 20px;
+}
+
+.nav-list2 {
+	position: absolute;
+	right : 10%;
+	top: 20px;
+	z-index: 8;
+}
+
+.nav-bar a {
+	text-decoration: none;
+	font-family: 'Fjalla One', cursive;
+	color: black;
+
+	font-size: 18px;
+	padding: 15px;
+}
+
+.nav-bar a.nav-icon {
+	font-size: 20px;
+}
+
+.nav-bar em {
+	background-color: red;
+    border-radius: 50%;
+    width: 13px;
+    height: 15px;
+    text-align: center;
+    color: white;
+    font-size: 13px;	
+    position: absolute;
+    right: 10px;
+    top:-3px;
+}
+
+.nav-bar a:hover {
+	color: #FFBD2F;
+	
+}
+
+.nav-bar .under-nav-list {
+	display: none;
+	position: absolute;
+    top: 40px;
+    right: 13px;
+    border: 1px solid black;
+  	z-index: 9;
+  	padding: 10px;
+}
+
+.nav-bar .under-nav-list a {
+	padding: 10px;
+	padding: 7px 14px;
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+/*9.reagit:hover .nav-bar div.under-nav-list {}*/

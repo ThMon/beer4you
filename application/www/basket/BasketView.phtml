@@ -12,7 +12,7 @@
 		</tbody>
 	</table>
 </div>
-<form action="" method="POST">
-	<input type="hidden" name="basketItem">
+<form action="<?=$requestUrl ?>/payment" method="POST">
+	<input type="hidden" name="basketItem" id="basketItem" value="">
 	<input type="submit" value="Payer ma commande">
 </form>
