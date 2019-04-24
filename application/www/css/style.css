@@ -40,6 +40,24 @@ body {
 
 header h1 {
 	text-align: center;
+	padding: 180px 0 80px 0;
+	background-image: url('../images/logo/home2.jpg');
+	text-shadow:0 2px 0 black, 0 -2px 0 black;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+
+}
+
+.background_opacity {
+	opacity: 0.7;
+	background-color: black;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 5;
 }
 
 header h1 a {
@@ -52,14 +70,17 @@ header h1 a {
 	margin-top: -40px;
 	width:50%;
 	text-align: center;
+	position: relative;
+	z-index: 6;
 }
 
 .header-logo {
-	width:20%;
-	display: block;
-	margin: auto;
-	margin-top: -15px;
+	width: 65px;
+    position: relative;
+    top: -25px;
 }
+
+
 
 .hide {
 	display: none;
@@ -74,12 +95,18 @@ header h1 a {
 	height: 60px;
 	border-bottom: 1px solid grey;
 	background-color: white;
+	z-index: 10;
 }
 
 .nav-list1 {
 	position: absolute;
-	left : 10%;
+	left : 5%;
 	top: 20px;
+}
+
+.nav-list1  a {
+	position: relative;
+	top: -45px;
 }
 
 .nav-list2 {
@@ -121,21 +148,54 @@ header h1 a {
 }
 
 .nav-bar .under-nav-list {
-	display: none;
 	position: absolute;
     top: 40px;
-    right: 13px;
+    right: 0;
+    text-align: center;
     border: 1px solid black;
   	z-index: 9;
   	padding: 10px;
+  	background-color: white;
 }
 
 .nav-bar .under-nav-list a {
 	padding: 10px;
-	padding: 7px 14px;
-    display: block;
+	padding: 4px 14px;
     text-align: center;
     margin: auto;
+    display: block;
 }
 
-/*9.reagit:hover .nav-bar div.under-nav-list {}*/
+#userButton {
+	display: inline-block;
+}
+
+
+#userButton .fa-user {
+	font-size: 19px;
+}
+
+main {
+	padding-left: 25%;
+	padding-right: 25%;
+}
+
+footer {
+    padding-bottom: 20px;
+    padding-top: 10px;
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+    background-color: #f2f2f2;
+    border-top: 1px solid grey;
+}
+
+/* généraux*/
+
+.f-l {
+	float: left;
+}
+
+.c-b {
+	clear: both;
+}

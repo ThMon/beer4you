@@ -19,31 +19,43 @@
     <script src="<?= $wwwUrl ?>/js/classes/Basket.class.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline|Indie+Flower" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
-</head>
+</head>  
 <body>
 
 <!-- En-tête commune -->
 <nav class="nav-bar">
     <div class="nav-list1">
+        <img class="header-logo" src="<?= $wwwUrl ?>/images/logo/logo-beer.jpg">
         <a class="" href="<?= $requestUrl ?>">Accueil</a>
         <a class="" href="<?= $requestUrl ?>/products">Nos produits</a>
     </div>
     <div class="nav-list2">
     
-    <a href="#" id="userButton"><i class="fas fa-user"></i></a>
-        <div class="under-nav-list">
+    <div id="userButton">
+        <i class="fas fa-user"></i>
+        <div class="under-nav-list hide">
             <?php if(array_key_exists('user', $_SESSION)) {?>
+
                 <a class="" href="<?= $requestUrl ?>/user/profil">Mon profil</a>
+
                 <?php if($_SESSION['user']['role'] == 'admin') {?>
+                   
                     <a class="" href="<?= $requestUrl ?>/admin">Admin</a>
+
                 <?php } ?>
+                 
                  <a class="" href="<?= $requestUrl ?>/user/logout">Déconnexion</a>
+
             <?php } else {?>
+               
                 <a class="" href="<?= $requestUrl ?>/user/login">Connexion</a>
                 <a class="" href="<?= $requestUrl ?>/user/register">S'enregistrer</a>
-            <?php } ?>
 
+            <?php } ?>
         </div>
+
+    </div>
+        
         <a class="nav-icon" href="<?= $requestUrl ?>/basket"><i class="fas fa-shopping-cart"></i></a>
         <em class="hide" id="itemBasket"></em>
         
@@ -52,9 +64,9 @@
 
 <header>
     <h1>
-        <img class="header-logo" src="<?= $wwwUrl ?>/images/logo/logo-beer.jpg">
+        <div class="background_opacity"></div>
         <a href="<?= $requestUrl ?>">
-           Beer4You, de la mauvaise bière, mais de la bière quand même
+           Beer4You, de la mauvaise bière, mais de la bière quand même !
         </a>
     </h1>
 </header>

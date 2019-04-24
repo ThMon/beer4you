@@ -4,7 +4,7 @@
 // FONCTIONS                                                                           //
 /////////////////////////////////////////////////////////////////////////////////////////
 let basket = new Basket();
-/*
+
 $('#userButton').on('mouseover', function() {
 	$('.under-nav-list').removeClass('hide');
 });
@@ -12,7 +12,7 @@ $('#userButton').on('mouseover', function() {
 $('.under-nav-list').on('mouseout', function() {
 	$('.under-nav-list').addClass('hide');
 });
-*/
+
 if(window.location.href.indexOf('/product') != -1) {
 
 	$('.addToBasket').on('click', function(event) {
