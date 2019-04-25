@@ -22,11 +22,21 @@ if(window.location.href.indexOf('/product') != -1) {
 		let quantity = $('#beer-'+id).val();
 		let price = $(this).data('price');
 
+
 		console.log(id);
 		console.log(name);
 		console.log(quantity);
 		basket.addToBasket(id, name, quantity, price);
+		$('#productPopUp').removeClass('hide');
+		$('#beerNumber').text(quantity);
+		$('#beer-'+id).val('');
 	});
+
+	$('#closePopUp').on('click', function(event) {
+		$('#productPopUp').addClass('hide');
+	});
+
+	
 
 }
 
