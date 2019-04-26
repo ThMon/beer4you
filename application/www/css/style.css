@@ -199,3 +199,70 @@ footer {
 .c-b {
 	clear: both;
 }
+
+/*généraux popup*/
+
+.popUp {
+	border: 2px solid #FFBD2F;
+	border-radius:20px;
+	position: fixed;
+    top: 150px;
+    left: 32%;
+    z-index: 15;
+    background-color: white;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.popUp .closePopUp {
+	width: 15%;
+	margin: 5px 20px 0 91%;
+    cursor: pointer;
+
+}
+
+.popUp img {
+	margin-top: 30px;
+}
+
+.closePopUp:hover {
+	color: #FFBD2F;
+}
+
+/*beau formulaire*/
+
+h3 {
+	font-family: 'Fjalla One', cursive;
+	font-size: 30px;
+	text-align: center;
+}
+
+.b-form {
+	text-align: center;
+	width: 50%;
+	margin: auto;
+	border: 2px solid #FFBD2F;
+	border-radius: 12px;
+	padding: 10px 2% 20px 2%;
+}
+
+
+
+.b-form input {
+	font-family: 'Fjalla One', cursive;
+	display: block;
+	width: 87%;
+	margin: auto;
+	margin-top: 10px;
+	height: 32px;
+    border-radius: 12px;
+    border: 1px solid #c4c3c2;
+    padding-left: 3%;
+}
+
+.b-form input[type="submit"] {
+	background-color: #FFBD2F;
+	width: 30%;
+	color: white;
+	text-shadow:0 1px 0 #c4c3c2, 0 -1px 0 #c4c3c2;
+}

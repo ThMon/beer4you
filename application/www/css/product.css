@@ -25,8 +25,13 @@ main {
 
 .product-mosaic h3 {
 	text-shadow:0 1px 0 black, 0 -1px 0 black;
-	color: #FFBD2F;
+	color: black;
 	font-size: 22px;
+}
+
+.product-mosaic:hover h3 {
+	text-shadow:0 1px 0 black, 0 -1px 0 black;
+	color: #FFBD2F;
 }
 
 .product-mosaic p {
@@ -69,29 +74,3 @@ main {
 
 }
 
-#productPopUp {
-	border: 2px solid #FFBD2F;
-	border-radius:20px;
-	position: fixed;
-    top: 150px;
-    left: 32%;
-    z-index: 15;
-    background-color: white;
-    text-align: center;
-    padding: 10px 20px;
-}
-
-#productPopUp #closePopUp {
-	width: 15%;
-	margin: 5px 20px 0 91%;
-    cursor: pointer;
-
-}
-
-#productPopUp img {
-	margin-top: 30px;
-}
-
-#closePopUp:hover {
-	color: #FFBD2F;
-}

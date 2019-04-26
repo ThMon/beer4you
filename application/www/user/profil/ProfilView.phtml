@@ -1,6 +1,7 @@
 <div>
+	<h3>Mon Profil</h3>
 	<?php if(empty($user) == false) { ?>
-	<form action="<?=$requestUrl?>/user/profil" method="POST">
+	<form class="b-form" action="<?=$requestUrl?>/user/profil" method="POST">
 		<input type="text" name="firstname" placeholder="Prénom" value="<?=$user['firstName']?>">
 		<input type="text" name="lastname" placeholder="Nom" value="<?=$user['lastName']?>">
 		<input type="text" name="email" placeholder="email" value="<?=$user['email']?>">

@@ -11,8 +11,6 @@ class ProfilController
         
     	$userModel = new UserModel();
         $user = $userModel->findOneUser($_SESSION['user']['id']);
-        var_dump($_SESSION);
-        var_dump($user);
 
         return [
             "user"=>$user

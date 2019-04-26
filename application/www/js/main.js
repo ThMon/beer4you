@@ -13,7 +13,7 @@ $('.under-nav-list').on('mouseout', function() {
 	$('.under-nav-list').addClass('hide');
 });
 
-if(window.location.href.indexOf('/product') != -1) {
+if(window.location.href.indexOf('/products') != -1) {
 
 	$('.addToBasket').on('click', function(event) {
 		event.preventDefault();
@@ -22,18 +22,26 @@ if(window.location.href.indexOf('/product') != -1) {
 		let quantity = $('#beer-'+id).val();
 		let price = $(this).data('price');
 
+		if(isNaN(quantity) || $('#beer-'+id).val == '') {
+			$('#errorPopUp').removeClass('hide');
+			$('#beer-'+id).val('');
+		} else {
+			console.log(id);
+			console.log(name);
+			console.log(quantity);
+			basket.addToBasket(id, name, quantity, price);
+			$('#productPopUp').removeClass('hide');
+			$('#beerNumber').text(quantity);
+			$('#beer-'+id).val('');
 
-		console.log(id);
-		console.log(name);
-		console.log(quantity);
-		basket.addToBasket(id, name, quantity, price);
-		$('#productPopUp').removeClass('hide');
-		$('#beerNumber').text(quantity);
-		$('#beer-'+id).val('');
+		}
+
+		
 	});
 
-	$('#closePopUp').on('click', function(event) {
+	$('.closePopUp').on('click', function(event) {
 		$('#productPopUp').addClass('hide');
+		$('#errorPopUp').addClass('hide');
 	});
 
 	

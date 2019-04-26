@@ -1,11 +1,31 @@
-<a href="<?= $requestUrl ?>/products">Retour aux produits</a>
-<div>
+<link rel="stylesheet" type="text/css" href="<?= $wwwUrl ?>/css/detail.css">
+
+<div id="errorPopUp" class="hide popUp">
+    <p id="closePopUpError" class="closePopUp">X<p>
+    <h4>ça ne peut pas marcher !</h4>
+    <p>Si vous ne rentrez pas un chiffre, on ne peut pas compter</p>
+    <img src="<?= $wwwUrl ?>/images/logo/ivrogne.jpg">
+</div>
+
+<div id="productPopUp" class="hide popUp">
+    <p id="closePopUpProduct" class="closePopUp">X<p>
+    <h4>Félicitation !</h4>
+    <p>Vous avez ajouté <em id="beerNumber"></em> bière(s) à votre panier</p>
+    <img src="<?= $wwwUrl ?>/images/logo/ivrogne.jpg">
+</div>
+
+<a href="<?= $requestUrl ?>/products"><i class="fas fa-arrow-circle-left"></i></a>
+<div class="beerDetail">
  	<img src="<?= $wwwUrl?>/images/beers/<?=$beer['Photo']?>">
     <h3><?=$beer['Name']?></h3>
     <p><?=$beer['Description']?></p>
-    <form>
-        <input type="text" name="quantity" id="beer-<?=$beer['Id']?>">
-        <button class="addToBasket" data-name="<?=$beer['Name']?>" data-price="<?=$beer['SalePrice']?>" data-id="<?=$beer['Id']?>">Ajouter au panier</p>
-    </form>
+    <div class="paymentPart">
+    	<span>Prix Unitaire : <em><?=number_format($beer['SalePrice'], 2)?> €</em></span>
+	    <form>
+	        <input type="text" name="quantity" id="beer-<?=$beer['Id']?>">
+	        <button class="addToBasket" data-name="<?=$beer['Name']?>" data-price="<?=$beer['SalePrice']?>" data-id="<?=$beer['Id']?>"><i class="fas fa-plus-circle"></i></p>
+	    </form>
+    </div>
+    
 
 </div>
