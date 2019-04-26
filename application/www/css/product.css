@@ -24,7 +24,6 @@ main {
 }
 
 .product-mosaic h3 {
-	text-shadow:0 1px 0 black, 0 -1px 0 black;
 	color: black;
 	font-size: 22px;
 }
