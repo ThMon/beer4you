@@ -1,29 +1,36 @@
+<link rel="stylesheet" type="text/css" href="<?= $wwwUrl ?>/css/admin.css">
+
+<h3>Admin</h3>
 <div>	
 	<hr/>
-	<a href="<?=$requestUrl ?>/admin/product/add">Ajouter une nouvelle bière</a>
-	<table>
-		<tr>	
+	<h4>Gestion des bières !</h4>
+	<a class="addBeer" href="<?=$requestUrl ?>/admin/product/add"><i class="fas fa-plus-circle"></i> Ajouter une nouvelle bière</a>
+	<table class="tableBeer">
+		<tr class="titleBeer">	
+			<td>Photo</td>
 			<td>Nom</td>
-			<td>photo</td>
 			<td>Action</td>
 		</tr>
 
 		<?php foreach($beers as $beer) {?>
 
 			<tr>	
-				<td><?= $beer['Name'] ?></td>
-				<td><img src="<?= $wwwUrl ?>/images/beers/<?=$beer['Photo']?>"></td>
-				<td>
-					<a href="<?=$requestUrl ?>/admin/product/update?id=<?=$beer['Id']?>">Modifier</a>
-					<a href="<?=$requestUrl ?>/admin/product/delete?id=<?=$beer['Id']?>">Supprimer</a>
+				<td class="pBeer"><img src="<?= $wwwUrl ?>/images/beers/<?=$beer['Photo']?>"></td>
+				<td class="nBeer"><?= $beer['Name'] ?></td>
+				<td class="aBeer">
+					<a href="<?=$requestUrl ?>/admin/product/update?id=<?=$beer['Id']?>"><i class="fas fa-pen"></i></a>
+					<a href="<?=$requestUrl ?>/admin/product/delete?id=<?=$beer['Id']?>"><i class="fas fa-trash-alt"></i></a>
 				</td>
 			</tr>
 
 		<?php } ?>
 
 		</table>
+
 		<hr/>
-		<table>
+		<h4>Gestion des utilisateurs !</h4>
+
+		<table class="userTable">
 
 			<tr>	
 				<td>Nom</td>
@@ -51,7 +58,7 @@
 						</select>
 					</td>
 					<td>
-						<a href="<?=$requestUrl ?>/admin/user/delete?id=<?=$user['Id']?>">Supprimer</a>
+						<a href="<?=$requestUrl ?>/admin/user/delete?id=<?=$user['Id']?>"><i class="fas fa-trash-alt"></i></a>
 					</td>
 				</tr>
 				<?php } ?>

@@ -58,7 +58,19 @@ if(window.location.href.indexOf('/basket') != -1) {
 		basket.removeToBasket(id);
 	});
 }
+/*
 
+if(window.location.href.indexOf('/product/update') != -1) {
+	console.log('laaaaaa');
+
+	$('#beer_pict').on('change', function(event) {
+		console.log($('#beer_pict').val());
+		$('.b-form img').attr('src', $('#beer_pict').val());
+	})
+
+}
+
+*/
 /////////////////////////////////////////////////////////////////////////////////////////
 // CODE PRINCIPAL                                                                      //
 /////////////////////////////////////////////////////////////////////////////////////////

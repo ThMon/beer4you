@@ -255,9 +255,45 @@ h3 {
 	margin: auto;
 	margin-top: 10px;
 	height: 32px;
-    border-radius: 12px;
-    border: 1px solid #c4c3c2;
-    padding-left: 3%;
+  border-radius: 12px;
+  border: 1px solid #c4c3c2;
+  padding-left: 3%;
+  outline: none;
+}
+
+.b-form img {
+
+	width: 90%;
+
+}
+
+.b-form textarea {
+	font-family: 'Fjalla One', cursive;
+	display: block;
+	width: 87%;
+	margin: auto;
+	margin-top: 10px;
+	min-height: 70px;
+  border-radius: 12px;
+  border: 1px solid #c4c3c2;
+  padding-left: 3%;
+  outline: none;
+
+}
+
+.b-form label {
+	font-family: 'Fjalla One', cursive;
+	display: block;
+	width: 87%;
+	margin: auto;
+	margin-top: 10px;
+	text-align: left;
+}
+
+.b-form input[type="file"] {
+	border: none;
+	font-size: 15px;
+	outline: none;
 }
 
 .b-form input[type="submit"] {
@@ -265,4 +301,9 @@ h3 {
 	width: 30%;
 	color: white;
 	text-shadow:0 1px 0 #c4c3c2, 0 -1px 0 #c4c3c2;
+}
+
+.comeBack {
+	color: #FFBD2F;
+	font-size: 28px;
 }

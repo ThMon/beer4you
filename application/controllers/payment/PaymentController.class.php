@@ -9,6 +9,6 @@ class PaymentController
 
     public function httpPostMethod(Http $http, array $formFields)
     {
-    	var_dump($_POST);
+    	var_dump(json_decode($_POST['basketItem']));
     }
 }

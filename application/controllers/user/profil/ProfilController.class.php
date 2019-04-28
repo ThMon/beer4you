@@ -24,6 +24,6 @@ class ProfilController
         $userModel = new UserModel();
         $userModel->changeUserProfil($_POST, $_SESSION['user']['id']);
 
-        $http->redirectTo('/');
+        $http->redirectTo('/user/profil');
     }
 }

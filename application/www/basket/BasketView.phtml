@@ -1,6 +1,9 @@
-<h2>Récapitulatif de la commande</h2>
+<link rel="stylesheet" type="text/css" href="<?= $wwwUrl ?>/css/basket.css">
+
+<h3>Votre panier !</h3>
+<h4>Récapitulatif de la commande</h4>
 <div id="displayBasket">
-	<table>
+	<table class="basketTable">
 		<thead>
 			<th>Quantité</th>
 			<th>Nom</th>
@@ -8,11 +11,20 @@
 			<th>Prix Total</th>
 			<th>Action</th>
 		</thead>
+		<tfoot>
+			<tr>
+				<td>Prix Total</td>
+				<td></td>
+				<td></td>
+				<td><span id="totalPrice">35.00</span> €</td>
+				<td></td>
+			</tr>
+		</tfoot>
 		<tbody>
 		</tbody>
 	</table>
 </div>
-<form action="<?=$requestUrl ?>/payment" method="POST">
+<form class="p-form" action="<?=$requestUrl ?>/payment" method="POST">
 	<input type="hidden" name="basketItem" id="basketItem" value="">
 	<input type="submit" value="Payer ma commande">
 </form>
