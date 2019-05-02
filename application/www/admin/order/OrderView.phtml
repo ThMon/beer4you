@@ -1,0 +1,19 @@
+<div>
+	<h3>Récapitulatif des commandes</h3>
+	<table>
+		<thead>
+			<th>Id commande</th>
+			<th>Prix total</th>
+			<th>Date de la commande</th>
+		</thead>
+		<tbody>
+			<?php foreach ($orders as $order): ?>
+				<tr>
+					<td><a href="<?=$requestUrl ?>/admin/order/detail?id=<?=$order['id']?>"><?=$order['id']?></a></td>
+					<td><?=$order['totalAmount']?></td>
+					<td><?=$order['CreationTimestamp']?></td>
+				</tr>
+			<?php endforeach ?>
+		</tbody>
+	</table>
+</div>
