@@ -14,6 +14,19 @@ class OrderModel {
 
 	}
 
+	public function getOrderDetail($id) {
+
+		$database = new Database();
+
+		$sql = "SELECT * FROM orders ";
+
+		$values = [ ];
+
+		return $database->query($sql, $values);
+
+	}
+
+
 	public function saveOrder($orders, $userId) {
 		$database = new Database();
 
