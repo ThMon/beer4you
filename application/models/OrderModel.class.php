@@ -14,18 +14,51 @@ class OrderModel {
 
 	}
 
-	public function getOrderDetail($id) {
+	public function getAllOrderDetail($id) {
+		$database = new Database();
+
+		$sql = "SELECT *
+				FROM
+					orders
+				WHERE id= ? ";
+
+		$values = [ $id ];
+
+		$order = $database->queryOne($sql, $values);
+
 
 		$database = new Database();
 
-		$sql = "SELECT * FROM orders ";
+		$sql = "SELECT *
+				FROM
+					users
+				WHERE id= ? ";
 
-		$values = [ ];
+		$values = [ $order['user_id'] ];
 
-		return $database->query($sql, $values);
+		$user = $database->queryOne($sql, $values);
 
+		$database = new Database();
+
+		$sql = "SELECT orderlines.id, quantity, priceEach, Name, Photo
+				FROM
+					orderlines
+				INNER join
+					beers
+				ON
+					orderlines.beer_id = beers.Id
+				WHERE order_id= ? ";
+
+		$values = [ $id ];
+
+		$orderDetail = $database->query($sql, $values);
+
+		return  [ 
+					'order'=> $order,
+					'user'=> $user,
+					'orderDetail'=>$orderDetail
+				];
 	}
-
 
 	public function saveOrder($orders, $userId) {
 		$database = new Database();
