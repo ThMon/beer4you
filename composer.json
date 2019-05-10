@@ -1,0 +1,12 @@
+{
+    "name": "wap65/beer4you",
+    "authors": [
+        {
+            "name": "ThMon",
+            "email": "thibaut.monesma@gmail.com"
+        }
+    ],
+    "require": {
+        "stripe/stripe-php": "^6.34"
+    }
+}

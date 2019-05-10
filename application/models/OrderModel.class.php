@@ -92,6 +92,8 @@ class OrderModel {
 		$values = [ $totalAmount, $orderId ];
 
 		$database->executeSql($sql, $values);
+
+		//return $totalAmount;
 	}
 }
 

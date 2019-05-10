@@ -261,11 +261,25 @@ h3 {
   outline: none;
 }
 
+.card-element {
+	font-family: 'Fjalla One', cursive;
+	display: block;
+	width: 87%;
+	margin: auto;
+	margin-top: 10px;
+	height: 32px;
+    border-radius: 12px;
+    border: 1px solid #c4c3c2;
+    padding-left: 3%;
+    outline: none;
+}
+
 .b-form img {
 
 	width: 90%;
 
 }
+
 
 .b-form textarea {
 	font-family: 'Fjalla One', cursive;

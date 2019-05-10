@@ -27,9 +27,18 @@ class PaymentController
     	}
 
     	var_dump($orders);
+        
+        try {
 
-    	$orderModel = new OrderModel();
 
-    	$orderModel->saveOrder($orders, $_SESSION['user']['id']);
+            
+            //$orderModel = new OrderModel();
+
+            //$orderModel->saveOrder($orders, $_SESSION['user']['id']);
+        } catch (Exception $error) {
+
+        }
+
+       	
     }
 }
