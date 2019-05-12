@@ -58,6 +58,11 @@ if(window.location.href.indexOf('/basket') != -1) {
 		basket.removeToBasket(id);
 	});
 }
+
+if(window.location.href.indexOf('/payment') != -1) {
+
+		basket.loadBasketInInput('#orders');
+}
 /*
 
 if(window.location.href.indexOf('/product/update') != -1) {

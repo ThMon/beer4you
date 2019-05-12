@@ -78,11 +78,16 @@ class Basket {
 				$('#displayBasket table tbody').append(tr);
 			}
 			$('#totalPrice').text(totalPrice.toFixed(2));
-			$('#basketItem').val(JSON.stringify(this.items));
+			//$('#basketItem').val(JSON.stringify(this.items));
+			this.loadBasketInInput('#basketItem');
 		} else {
 			$('#displayBasket').html('<p>Votre panier est vide...</p>') 
 		}
 		
+	}
+
+	loadBasketInInput(elmt) {
+		$(elmt).val(JSON.stringify(this.items));
 	}
 
 	removeToBasket(id) {
