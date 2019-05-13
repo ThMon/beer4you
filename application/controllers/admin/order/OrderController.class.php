@@ -6,7 +6,6 @@ class OrderController
     {
     	$orderModel = new OrderModel();
         $orders = $orderModel->getAllOrders();
-        var_dump($orders);
         return  [
                     'orders'=>$orders
                 ];

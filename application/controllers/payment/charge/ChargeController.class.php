@@ -11,14 +11,11 @@ class ChargeController
 
     public function httpPostMethod(Http $http, array $formFields)
     {
-
-        var_dump($_POST);
-
+        
         $orders =  json_decode($_POST['orders']);
 
         $totalAmount = 0;
 
-        var_dump($_SESSION);
 
         $beerModel = new BeerModel();
 
@@ -63,8 +60,17 @@ class ChargeController
             $orderModel = new OrderModel();
 
             $orderModel->saveOrder($orders, $_SESSION['user']['id']);
+
+            $http->redirectTo('/payment/success?id='.$_POST['stripeToken']);
         }  catch (Exception $error) {
-            echo "c'est mort !";
+            $errorMessage = "Le paiement a échoué";
+            if($error->httpStatus == 402) {
+                $errorMessage = "Votre carte a malheureusement été refusé merci de tester une autre carte";
+            } else {
+                $errorMessage = "le paiement a échoué a malheureusement échoué, merci de tester ultérieurment"; 
+            }
+            
+            return ['errorMessage' => $errorMessage];
         }
 
         

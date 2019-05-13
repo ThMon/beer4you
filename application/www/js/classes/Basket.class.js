@@ -81,7 +81,8 @@ class Basket {
 			//$('#basketItem').val(JSON.stringify(this.items));
 			this.loadBasketInInput('#basketItem');
 		} else {
-			$('#displayBasket').html('<p>Votre panier est vide...</p>') 
+			$('#displayBasket').html('<p>Votre panier est vide...</p>');
+			$('.p-form').css('display', 'none');
 		}
 		
 	}
@@ -95,5 +96,9 @@ class Basket {
 		this.saveBasket();
 	}
 
+	clearBasket() {
+		this.items = [];
+		this.saveBasket();
+	}
 
 }

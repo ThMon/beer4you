@@ -1,16 +1,21 @@
+<link rel="stylesheet" type="text/css" href="<?=$wwwUrl?>/css/adminOrder.css">
+
 <div>
 	<h3>Récapitulatif des commandes</h3>
-	<table>
+
+	<a class="back" href="<?=$requestUrl?>/admin"><i class="fas fa-arrow-circle-left"></i> Retour vers l'admin</a>
+	<p>Cliquez sur un numéro de commande pour voir le détail !</p>
+	<table class="t-order">
 		<thead>
-			<th>Id commande</th>
+			<th>Numéro de commande</th>
 			<th>Prix total</th>
 			<th>Date de la commande</th>
 		</thead>
 		<tbody>
 			<?php foreach ($orders as $order): ?>
 				<tr>
-					<td><a href="<?=$requestUrl ?>/admin/order/detail?id=<?=$order['id']?>"><?=$order['id']?></a></td>
-					<td><?=$order['totalAmount']?></td>
+					<td class="link"><a href="<?=$requestUrl ?>/admin/order/detail?id=<?=$order['id']?>"><?=$order['id']?></a></td>
+					<td><?=number_format($order['totalAmount'], 2)?> €</td>
 					<td><?=$order['CreationTimestamp']?></td>
 				</tr>
 			<?php endforeach ?>

@@ -5,5 +5,5 @@
  */
 
 $config['dsn']      = 'mysql:host=localhost;dbname=beer4you;charset=UTF8';
-$config['password'] = 'root';
+$config['password'] = 'troiswa';
 $config['user']     = 'root';

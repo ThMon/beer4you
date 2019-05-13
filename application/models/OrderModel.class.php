@@ -38,7 +38,6 @@ class OrderModel {
 
 		$user = $database->queryOne($sql, $values);
 
-		$database = new Database();
 
 		$sql = "SELECT orderlines.id, quantity, priceEach, Name, Photo
 				FROM

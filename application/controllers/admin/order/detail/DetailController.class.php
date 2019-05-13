@@ -6,7 +6,6 @@ class DetailController
     {
     	$orderModel = new OrderModel();
         $orderdetails = $orderModel->getAllOrderDetail($_GET['id']);
-        var_dump($orderdetails);
 
         return ['orderdetail' => $orderdetails];
     }
