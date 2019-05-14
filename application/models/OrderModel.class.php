@@ -14,6 +14,18 @@ class OrderModel {
 
 	}
 
+	public function getAllOrdersByUser($userId) {
+
+		$database = new Database();
+
+		$sql = "SELECT * FROM orders WHERE user_id=?";
+
+		$values = [ $userId ];
+
+		return $database->query($sql, $values);
+
+	}
+
 	public function getAllOrderDetail($id) {
 		$database = new Database();
 

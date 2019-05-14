@@ -1,3 +1,6 @@
+<link rel="stylesheet" type="text/css" href="<?=$wwwUrl?>/css/profil.css">
+
+
 <div>
 	<h3>Mon Profil</h3>
 	<?php if(empty($user) == false) { ?>
@@ -12,3 +15,24 @@
 	</form>
 	<?php } ?>
 </div>
+
+<hr/>
+
+<h4>Récapitulatif des commandes</h4>
+<p>Cliquez sur un numéro de commande pour voir le détail !</p>
+<table class="t-order">
+	<thead>
+		<th>Numéro de commande</th>
+		<th>Prix total</th>
+		<th>Date de la commande</th>
+	</thead>
+	<tbody>
+		<?php foreach ($orders as $order): ?>
+			<tr>
+				<td class="link"><a href="<?=$requestUrl ?>/user/profil/detail?id=<?=$order['id']?>"><?=$order['id']?></a></td>
+				<td><?=number_format($order['totalAmount'], 2)?> €</td>
+				<td><?=$order['CreationTimestamp']?></td>
+			</tr>
+		<?php endforeach ?>
+	</tbody>
+</table>

@@ -12,8 +12,12 @@ class ProfilController
     	$userModel = new UserModel();
         $user = $userModel->findOneUser($_SESSION['user']['id']);
 
+        $orderModel = new OrderModel();
+        $orders = $orderModel->getAllOrders();
+
         return [
-            "user"=>$user
+            "user"=>$user,
+            "orders"=>$orders
         ];
     }
 
