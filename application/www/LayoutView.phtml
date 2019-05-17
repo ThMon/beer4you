@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Beer4you</title>
     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/normalize-3.0.3.min.css">
     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/all.min.css">
@@ -60,6 +61,34 @@
         <em class="hide" id="itemBasket"></em>
         
     </div>
+</nav>
+
+<nav class="nav-bar-mobile">
+    <i class="fas fa-bars" id="burger-button"></i>
+    <div class="nav-column">
+        <a class="" href="<?= $requestUrl ?>">Accueil</a>
+        <a class="" href="<?= $requestUrl ?>/products">Nos produits</a>
+        <?php if(array_key_exists('user', $_SESSION)) {?>
+
+        <a class="" href="<?= $requestUrl ?>/user/profil">Mon profil</a>
+
+        <?php if($_SESSION['user']['role'] == 'admin') {?>
+                   
+            <a class="" href="<?= $requestUrl ?>/admin">Admin</a>
+
+        <?php } ?>
+                 
+            <a class="" href="<?= $requestUrl ?>/user/logout">Déconnexion</a>
+
+        <?php } else {?>
+               
+            <a class="" href="<?= $requestUrl ?>/user/login">Connexion</a>
+            <a class="" href="<?= $requestUrl ?>/user/register">S'enregistrer</a>
+
+        <?php } ?> 
+        <a class="nav-icon" href="<?= $requestUrl ?>/basket">Panier</a>
+    </div>
+    
 </nav>
 
 <header>

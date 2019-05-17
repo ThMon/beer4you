@@ -4,7 +4,7 @@
 // FONCTIONS                                                                           //
 /////////////////////////////////////////////////////////////////////////////////////////
 let basket = new Basket();
-
+let state = false;
 $('#userButton').on('mouseover', function() {
 	$('.under-nav-list').removeClass('hide');
 });
@@ -12,6 +12,30 @@ $('#userButton').on('mouseover', function() {
 $('.under-nav-list').on('mouseout', function() {
 	$('.under-nav-list').addClass('hide');
 });
+
+$('#burger-button').on('click', showNav);
+$('header').on('click', hideNav);
+//$('main').on('click', hideNav);
+
+function showNav(event) {
+	event.preventDefault();
+	
+	if (state == false) {
+		$('.nav-column').fadeIn('slow');
+		state = true;
+	} else {
+		$('.nav-column').fadeOut('slow');
+		state = false;
+	}
+}
+
+function hideNav(event) {
+	event.preventDefault();
+	if(state == true) {
+		$('.nav-column').fadeOut('slow');
+		state = false;
+	}
+}
 
 if(window.location.href.indexOf('/products') != -1) {
 
