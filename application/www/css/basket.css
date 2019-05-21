@@ -52,3 +52,28 @@
 	color: white;
 	text-shadow:0 1px 0 #c4c3c2, 0 -1px 0 #c4c3c2;
 }
+
+@media only screen and (max-width:760px) {
+
+	.desktop {
+		display: none;
+	}
+
+	.p-form input {
+		width:60%;
+	}
+
+	main {
+		padding-left: 2%;
+    	padding-right: 2%;
+	}
+
+	.basketTable {
+		font-size: 11px;
+	}
+
+	.basketTable th {
+		font-size: 14px;
+	}
+
+}

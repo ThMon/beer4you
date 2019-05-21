@@ -68,3 +68,13 @@ hr {
 .t-order tr {
 	border: 2px solid #FFBD2F;
 }
+
+@media only screen and (max-width:760px) {
+	.t-order {
+		font-size: 11px;
+	}
+	
+	.t-order th {
+		font-size: 14px;
+	}
+}

@@ -4,6 +4,9 @@ class RoleController
 {
     public function httpGetMethod(Http $http, array $queryFields)
     {
+        if(empty($_SESSION) == true || $_SESSION['user']['role'] != "admin" ) {
+            $http->redirectTo('/');
+        }
     	/*
     	 * Méthode appelée en cas de requête HTTP GET
     	 *

@@ -101,7 +101,7 @@ h3 {
 	width: 30%;
 	color: white;
 	text-shadow:0 1px 0 #c4c3c2, 0 -1px 0 #c4c3c2;
-	ont-family: 'Fjalla One', cursive;
+	font-family: 'Fjalla One', cursive;
 	display: block;
 	margin: auto;
 	margin-top: 10px;
@@ -110,4 +110,12 @@ h3 {
     border: 1px solid #c4c3c2;
     padding-left: 3%;
     outline: none;
+}
+
+
+@media only screen and (max-width:760px) {
+	.p-form {
+		width: 90%;
+	}
+
 }

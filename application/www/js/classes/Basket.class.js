@@ -68,15 +68,30 @@ class Basket {
 	}
 
 	displayCompleteBasket() {
+		console.log(document.body.offsetWidth);
+
 		let totalPrice= 0;
 		if(this.items.length > 0) {
+
 			$('#displayBasket table tbody').empty();
-			for (let i = 0; i < this.items.length; i++) {
-				totalPrice += parseFloat(this.items[i].quantity)*parseFloat(this.items[i].price);
-				var tr = $('<tr>');
-				tr.append('<td>'+this.items[i].quantity+'</td><td>'+this.items[i].name+'</td><td>'+this.items[i].price.toFixed(2)+' €</td><td>'+(parseFloat(this.items[i].quantity)*parseFloat(this.items[i].price)).toFixed(2) +' €</td><td><button class="trash-beer" data-index="'+i+'"><i class="fas fa-trash-alt"></i></button></td>')
-				$('#displayBasket table tbody').append(tr);
+
+			if (document.body.offsetWidth > 760 ) {
+
+				for (let i = 0; i < this.items.length; i++) {
+					totalPrice += parseFloat(this.items[i].quantity)*parseFloat(this.items[i].price);
+					var tr = $('<tr>');
+					tr.append('<td>'+this.items[i].quantity+'</td><td>'+this.items[i].name+'</td><td>'+this.items[i].price.toFixed(2)+' €</td><td>'+(parseFloat(this.items[i].quantity)*parseFloat(this.items[i].price)).toFixed(2) +' €</td><td><button class="trash-beer" data-index="'+i+'"><i class="fas fa-trash-alt"></i></button></td>')
+					$('#displayBasket table tbody').append(tr);
+				}
+			} else {
+				for (let i = 0; i < this.items.length; i++) {
+					totalPrice += parseFloat(this.items[i].quantity)*parseFloat(this.items[i].price);
+					var tr = $('<tr>');
+					tr.append('<td>'+this.items[i].quantity+'</td><td>'+this.items[i].name+'</td><td>'+(parseFloat(this.items[i].quantity)*parseFloat(this.items[i].price)).toFixed(2) +' €</td><td><button class="trash-beer" data-index="'+i+'"><i class="fas fa-trash-alt"></i></button></td>')
+					$('#displayBasket table tbody').append(tr);
+				}
 			}
+			
 			$('#totalPrice').text(totalPrice.toFixed(2));
 			//$('#basketItem').val(JSON.stringify(this.items));
 			this.loadBasketInInput('#basketItem');

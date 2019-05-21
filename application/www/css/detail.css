@@ -68,3 +68,11 @@ main i {
 	font-size: 28px;
 	
 }
+
+@media only screen and (max-width:760px) {
+
+	.paymentPart span {
+		font-size: 16px;
+	}
+
+}

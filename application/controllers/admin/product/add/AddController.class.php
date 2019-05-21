@@ -5,8 +5,8 @@ class AddController
     public function httpGetMethod(Http $http, array $queryFields)
     {
     	
-        if(empty($_SESSION) == true) {
-            $http->redirectTo('/user/login');
+        if(empty($_SESSION) == true || $_SESSION['user']['role'] != "admin" ) {
+            $http->redirectTo('/');
         }
     }
 

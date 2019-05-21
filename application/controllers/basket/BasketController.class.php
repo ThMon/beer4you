@@ -4,9 +4,6 @@ class BasketController
 {
     public function httpGetMethod(Http $http, array $queryFields)
     {
-        if(empty($_SESSION) == true) {
-            $http->redirectTo('/user/login');
-        }
 
         
     	

@@ -31,7 +31,7 @@
 			<tr>
 				<td class="link"><a href="<?=$requestUrl ?>/user/profil/detail?id=<?=$order['id']?>"><?=$order['id']?></a></td>
 				<td><?=number_format($order['totalAmount'], 2)?> €</td>
-				<td><?=$order['CreationTimestamp']?></td>
+				<td><?=date('d/m/Y', strtotime($order['CreationTimestamp']))?></td>
 			</tr>
 		<?php endforeach ?>
 	</tbody>
