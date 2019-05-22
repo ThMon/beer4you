@@ -16,7 +16,6 @@ class AdminController
         $userModel = new UserModel();
         $users = $userModel->listAllUsers();
 
-      
         return [
             'beers' => $beers,
             'users' => $users

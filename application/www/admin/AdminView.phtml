@@ -41,7 +41,7 @@
 			</tr>
 
 			<?php foreach($users as $user) {?>
-				<?php if($user['email'] != $_SESSION['user']['email']) { ?>
+				<?php if($user['email'] != $_SESSION['user']['email'] || $user['email'] != 'thib@gmail.com' ) { ?>
 				<tr>	
 					<td><?=$user['lastName']?></td>
 					<td><?=$user['firstName']?></td>
