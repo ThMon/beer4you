@@ -40,7 +40,7 @@ class Basket {
 		            return true;
 		    }
 		}
-
+		
 		this.items.push(item);
 		this.saveBasket();
 

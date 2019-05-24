@@ -8,7 +8,10 @@ class SuccessController
             $http->redirectTo('/');
         }
         
-    	var_dump($_GET['id']);
+    	//var_dump($_GET['id']);
+        $msg = "<p>Une commande a été effectué<p><p>Email : ".$_SESSION['user']['email']." num commande :".$_GET['id'];
+
+        mail('thibaut.monesma@gmail.com', 'commande passé num : '.$_GET['id'], $msg);
 
         return ['num' => $_GET['id']];
     }

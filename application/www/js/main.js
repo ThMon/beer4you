@@ -46,7 +46,7 @@ if(window.location.href.indexOf('/products') != -1) {
 		let quantity = $('#beer-'+id).val();
 		let price = $(this).data('price');
 
-		if(isNaN(quantity) || $('#beer-'+id).val == '') {
+		if(isNaN(quantity) || quantity == '') {
 			$('#errorPopUp').removeClass('hide');
 			$('#beer-'+id).val('');
 		} else {
